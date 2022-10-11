@@ -42,7 +42,7 @@ class _SignInState extends State<SignIn> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(15),
                   child: TextFormField(
                     //controller: ,
                     decoration: InputDecoration(
@@ -55,7 +55,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.only(top: 3,bottom: 15,right: 15,left: 15),
                   child: TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -64,7 +64,8 @@ class _SignInState extends State<SignIn> {
                         hintText: 'Your Password',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                        )),
+                        )
+                        ),
                   ),
                 ),
                 Container(
