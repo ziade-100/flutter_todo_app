@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/util/password_forgot.dart';
 import 'package:todo/util/signup.dart';
 import 'package:todo/util/todo_home.dart';
 
@@ -76,7 +77,15 @@ class _SignInState extends State<SignIn> {
                   child:
                       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                     const Text("Forgot Password? "),
-                    TextButton(onPressed: () {}, child: const Text(" Reset"))
+                     GestureDetector(
+                      onTap: (){
+                        Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context)=> const ForgotPassword())
+                        );
+                      },
+                      child: const Text("Rest", style: TextStyle(color: Colors.blue),),
+                     ),
                   ]),
                 ),
                 Container(

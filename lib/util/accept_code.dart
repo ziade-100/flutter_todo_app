@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:todo/util/save_pasword.dart';
 
 class EnterCode extends StatefulWidget {
   const EnterCode({Key? key}) : super(key: key);
@@ -118,7 +119,12 @@ class _EnterCodeState extends State<EnterCode> {
           width: 150,
           padding: const EdgeInsets.all(15),
           child: ElevatedButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context)=>const SaveNewPassword())
+                );
+            },
             child:const Text("Submit") ),
         ),
       ]),

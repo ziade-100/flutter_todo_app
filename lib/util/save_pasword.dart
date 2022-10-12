@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/util/signin.dart';
 
 class SaveNewPassword extends StatefulWidget {
   const SaveNewPassword({Key? key}) : super(key: key);
@@ -77,7 +78,11 @@ class _SaveNewPasswordState extends State<SaveNewPassword> {
                   width: 160,
                   padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context)=>const SignIn()));
+                      },
                       child: const Text(
                         "Save",
                         style: TextStyle(fontSize: 15),

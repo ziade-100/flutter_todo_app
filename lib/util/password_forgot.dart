@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/util/accept_code.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -60,7 +61,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               width: 150,
               padding: const EdgeInsets.fromLTRB(5, 15, 5, 10),
               child: ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context)=>const EnterCode())
+                    );
+                },
                 child: const  Text("Send Code"),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
