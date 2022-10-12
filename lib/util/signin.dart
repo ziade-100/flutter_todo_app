@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo/util/signup.dart';
+import 'package:todo/util/todo_home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -82,7 +84,12 @@ class _SignInState extends State<SignIn> {
                   width: 160,
                   padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(builder: ((context) => const MyMainPage())
+                        ));
+                      },
                       child: const Text(
                         "Sign In",
                         style: TextStyle(fontSize: 15),
@@ -95,7 +102,12 @@ class _SignInState extends State<SignIn> {
                       children: [
                         const Text("New to Too Doo ?"),
                         TextButton(
-                            onPressed: () {}, child: const Text("Sign Up"))
+                            onPressed: () {
+                              Navigator.push(
+                                context, 
+                                MaterialPageRoute(builder: (context)=> SignUp())
+                              );
+                            }, child: const Text("Sign Up"))
                       ]),
                 )
               ],

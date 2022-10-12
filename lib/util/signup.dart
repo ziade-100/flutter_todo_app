@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/util/signin.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -16,7 +17,8 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Scaffold(
+     body:Padding(
       padding: const EdgeInsets.all(12),
       child: ListView(
         children: <Widget>[
@@ -116,7 +118,14 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 15,
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.push(
+                                context, 
+                                MaterialPageRoute(
+                                  builder: ((context) => const SignIn()
+                                  )
+                              ));
+                      },
                     ),
                   ),
                   Container(
@@ -127,7 +136,14 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         const Text("Already have an account?"),
                         TextButton(
-                            onPressed: () {}, child: const Text("Log in"))
+                            onPressed: () {
+                              Navigator.push(
+                                context, 
+                                MaterialPageRoute(
+                                  builder: ((context) => const SignIn()
+                                  )
+                              ));
+                            }, child: const Text("Log in"))
                       ],
                     ),
                   )
@@ -139,6 +155,6 @@ class _SignUpState extends State<SignUp> {
           )
         ],
       ),
-    );
+    ));
   }
 }
