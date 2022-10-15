@@ -14,9 +14,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         title: "Too doo",
         debugShowCheckedModeBanner: false,
-       // theme: ThemeData(primarySwatch: Colors.gray),
         home: Scaffold(
-          body: SignIn(), ),
+          body: SignUp(), ),
     );
     
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/util/signin.dart';
+import 'package:todo/util/todo_home.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -26,7 +27,8 @@ class _SignUpState extends State<SignUp> {
           Container(
             padding: const EdgeInsets.only(top: 30, bottom: 25),
             alignment: Alignment.center,
-            child: const Text("Logo goes here"),
+            // child: Image.asset('images/logo.png')
+            child:const Text("Logo goes here"),
           ),
           //title
           Container(
@@ -122,7 +124,7 @@ class _SignUpState extends State<SignUp> {
                          Navigator.push(
                                 context, 
                                 MaterialPageRoute(
-                                  builder: ((context) => const SignIn()
+                                  builder: ((context) => const MyMainPage()
                                   )
                               ));
                       },
