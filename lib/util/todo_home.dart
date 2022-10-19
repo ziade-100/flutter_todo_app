@@ -102,7 +102,7 @@ class _MyMainPageState extends State<MyMainPage> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'My Account'),
+                icon: Icon(Icons.person), label: 'My Account'),
           ]),
     );
   }

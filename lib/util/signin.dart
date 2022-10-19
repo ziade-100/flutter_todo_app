@@ -1,7 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/util/password_forgot.dart';
-import 'package:todo/util/signup.dart';
-import 'package:todo/util/todo_home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -14,116 +12,79 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: ListView(children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 30, bottom: 25),
-            alignment: Alignment.center,
-            child: const Text("Logo goes here"),
-          ),
-          //title
-          Container(
-            padding: const EdgeInsets.only(top: 30, bottom: 20),
-            alignment: Alignment.center,
-            child: const Text(
-              "Too Doo",
-              style: TextStyle(fontSize: 30),
+      body: SafeArea(
+          child: Center(
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset(
+                "lib/images/logo.png",
+                width: 100,
+                height: 100,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              "Sign in to continue",
-              style: TextStyle(fontSize: 16),
+
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
+              child: const Text("TooDoo",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(5),
-            child: Form(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(15),
-                  child: TextFormField(
-                    //controller: ,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF9F2ED),
-                        hintText: 'Your email',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        )),
+            //
+            Container(
+              alignment: Alignment.topLeft,
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+              child: const Text(
+                "Log in to Continue.",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              // ignore: avoid_unnecessary_containers
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFFF9F2ED),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: 'Your email'),
+                    )),
+              ),
+              //
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(10),
+              // ignore: avoid_unnecessary_containers
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color(0xFFF9F2ED),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          border: InputBorder.none, hintText: 'Password'),
+                    )),
+              ),
+              //
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                color: Colors.blueAccent,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 3,bottom: 15,right: 15,left: 15),
-                  child: TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF9F2ED),
-                        hintText: 'Your Password',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        )
-                        ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(
-                      top: 5, bottom: 10, right: 8, left: 8),
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    const Text("Forgot Password? "),
-                     GestureDetector(
-                      onTap: (){
-                        Navigator.push(
-                        context, 
-                        MaterialPageRoute(builder: (context)=> const ForgotPassword())
-                        );
-                      },
-                      child: const Text("Rest", style: TextStyle(color: Colors.blue),),
-                     ),
-                  ]),
-                ),
-                Container(
-                  height: 70,
-                  width: 160,
-                  padding: const EdgeInsets.all(10),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, 
-                          MaterialPageRoute(builder: ((context) => const MyMainPage())
-                        ));
-                      },
-                      child: const Text(
-                        "Sign In",
-                        style: TextStyle(fontSize: 15),
-                      )),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("New to Too Doo ?"),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context, 
-                                MaterialPageRoute(builder: (context)=> SignUp())
-                              );
-                            }, child: const Text("Sign Up"))
-                      ]),
-                )
-              ],
-            )),
-          )
-        ]),
-      ),
+                padding: const EdgeInsets.all(16),
+                child: Center(child: Text("Sign In"),)),
+              )
+          ],
+        ),
+      )),
     );
   }
 }

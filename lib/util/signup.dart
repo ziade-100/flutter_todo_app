@@ -19,20 +19,24 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body:Padding(
-      padding: const EdgeInsets.all(12),
-      child: ListView(
+    backgroundColor: Colors.white,
+    resizeToAvoidBottomInset: false,
+     body:SingleChildScrollView(
+     // padding: const EdgeInsets.all(12),
+      physics: BouncingScrollPhysics(),
+      child:Column(
+       // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          //logo
+       
           Container(
-            padding: const EdgeInsets.only(top: 30, bottom: 25),
+            padding: const EdgeInsets.only(top: 40, bottom: 25),
             alignment: Alignment.center,
-            // child: Image.asset('images/logo.png')
-            child:const Text("Logo goes here"),
+             child: Image.asset('lib/images/logo.png', height:100, width:100),
+            //child:const Text("Logo goes here"),
           ),
           //title
           Container(
-            padding: const EdgeInsets.only(top: 30, bottom: 20),
+            padding: const EdgeInsets.only(top: 25, bottom: 20),
             alignment: Alignment.center,
             child: const Text(
               "TooDoo",
@@ -40,10 +44,12 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            //padding: const EdgeInsets.all(5),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            alignment: Alignment.centerLeft,
             child: const Text(
               "Create Account with Us",
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
             ),
           ),
           // email,
@@ -56,64 +62,78 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(5),
+                   decoration: BoxDecoration(
+                      color: Color(0xFFF9F2ED),
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                      ),
                     child: TextFormField(
                       decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF9F2ED),
-                        border: OutlineInputBorder(
-                            // borderRadius: BorderRadius.circular(14),
-                            ),
+                     
+                        border:InputBorder.none,
                         hintText: 'Your email',
                       ),
                     ),
                   ),
+                    const SizedBox(height: 10,),
                   Container(
                     padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF9F2ED),
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                      ),
                     child: TextFormField(
                       obscureText: true,
                       decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF9F2ED),
-                        border: OutlineInputBorder(),
+                        border: InputBorder.none,
                         hintText: 'Password',
                       ),
                     ),
                   ),
+                  const SizedBox(height: 10,),
                   Container(
                     padding: const EdgeInsets.all(5),
+                     decoration: BoxDecoration(
+                      color: Color(0xFFF9F2ED),
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                      ),
                     child: TextFormField(
                       obscureText: true,
                       decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xFFF9F2ED),
-                        border: OutlineInputBorder(),
+                        border: InputBorder.none,
                         hintText: 'Confirm Password',
                       ),
                     ),
                   ),
+                  const SizedBox(height: 10,),
+                  //container for agrement button 
+                  // Row(
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       children: [
+                  //         Checkbox(
+                  //             value: agreed,
+                  //             onChanged: (agreed) {
+                  //               setState(() {
+                  //                 //agreed = ! agreed;
+                  //               });
+                  //             }),
+                  //         Text(
+                  //             "By Sign Up you agree to "),
+                  //             Text("ou Privacy Policy and terms.")
+                  //       ],
+                  //     ),
+                  
+                  
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      
-                      children: [
-                        Checkbox(
-                            value: agreed,
-                            onChanged: (agreed) {
-                              setState(() {
-                                //agreed = ! agreed;
-                              });
-                            }),
-                        const Text(
-                            "By Sign Up you agree to our Privacy Policy and terms.")
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.fromLTRB(5, 5, 5, 0),
                     height: 50,
                     width: 160,
-                    //decoration: BoxDecoration(borderRadius: ),
+                    decoration: BoxDecoration(
+                      borderRadius:BorderRadius.circular(20) ),
                     child: ElevatedButton(
+                      
                       child: const Text(
                         "Sign up",
                         style: TextStyle(
@@ -131,7 +151,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                     alignment: Alignment.center,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

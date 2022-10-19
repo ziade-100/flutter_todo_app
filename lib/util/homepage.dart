@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
         title: "Too doo",
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: SignUp(), ),
+          body: SignUp(),
+          ),
     );
     
   }
