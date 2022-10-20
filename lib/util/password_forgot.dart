@@ -12,70 +12,98 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
+      body: ListView(children: [
         //Logo
-        Container(
-          padding: const EdgeInsets.only(top: 30, bottom: 25),
-          alignment: Alignment.center,
-          child: const Text("Logo goes here"),
-        ),
-        //title
-        Container(
-          padding: const EdgeInsets.only(top: 30, bottom: 20),
-          alignment: Alignment.center,
-          child: const Text(
-            "TooDoo",
-            style: TextStyle(fontSize: 30),
+        SizedBox(height: 15,),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 15),
+            alignment: Alignment.center,
+            child: Image.asset(
+              'lib/images/logo.png',
+              width: 100,
+              height: 100,
+            ),
           ),
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-        
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.fromLTRB(10, 15, 10, 3),
-              child: const Text("Forgot password ?", style: TextStyle(fontSize: 20),),
+        //title
+        SizedBox(height: 10,),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 15),
+            alignment: Alignment.center,
+            child: const Text(
+              "TooDoo",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            Container(
-              alignment: Alignment.topLeft,
-               padding: const EdgeInsets.fromLTRB(10, 5, 5, 3),
-              child: const Text("A Password reset code will sent to your email"),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 5, 5, 10),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Color(0xFFF9F2ED),
-                  hintText: 'Your email',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                    
-                    ) ),
+          ),
+        ),
+        SizedBox(height: 10,),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.all(5),
+                child: const Text(
+                  "Forgot password ?",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
-            Container(
-              height: 70,
-              width: 150,
-              padding: const EdgeInsets.fromLTRB(5, 15, 5, 10),
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.push(
-                    context, 
-                    MaterialPageRoute(builder: (context)=>const EnterCode())
-                    );
+            SizedBox(height: 5,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.all(5),
+                child:
+                    const Text("A Password reset code will sent to your email"),
+              ),
+            ),
+              //email Input 
+              SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    color: Color(0xFFF9F2ED),
+                    borderRadius: BorderRadius.circular(15)),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Your email',
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ),
+            // send button 
+            SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: (context)=> const EnterCode()));
                 },
-                child: const  Text("Send Code"),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(13))),
-                    ),
+                child: Container(
+                  height: 50,
+                  width: 150,
+                  padding: const EdgeInsets.all(5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(15)),
+                  child: Text("Send Code", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                 ),
-                ),
-            
-          ]
+              ),
+            ),
+          ]),
         )
       ]),
     );
